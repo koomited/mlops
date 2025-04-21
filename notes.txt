@@ -1,0 +1,15 @@
+mlflow ui
+# Store artifact and meta data in sqlite
+mlflow ui --backend-store-uri sqlite:///mlflow.db
+# set another port to listen 
+mlflow ui --backend-store-uri sqlite:///mlflow.db --port 5001
+
+# se process runing
+sudo lsof -i :8000
+
+
+#kill process 
+pkill -f python
+
+# create experiment
+mlflow experiments create --experiment-name test-experiment
